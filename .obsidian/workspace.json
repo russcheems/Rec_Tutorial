@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "概要/基本概念.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "基本概念"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "概要/基本概念.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "README 的反向链接列表"
+              "title": "基本概念 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "概要/基本概念.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "README 的出链列表"
+              "title": "基本概念 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "概要/基本概念.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "基本概念 的大纲"
             }
           }
         ]
@@ -169,8 +169,13 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "05b44b5f3696e168",
+  "active": "b8a4506c5321fc48",
   "lastOpenFiles": [
+    "pics",
+    "pics/Pasted image 20250922155734.png",
+    "README.md",
+    "概要/基本概念.md",
+    "概要",
     "召回/user_cf.py",
     "ml-100k/ub.test",
     "ml-100k/ub.base",
@@ -180,10 +185,7 @@
     "ml-100k/u5.base",
     "ml-100k/u4.test",
     "ml-100k/u4.base",
-    "ml-100k/u3.test",
-    "ml-100k/u3.base",
     "test.md",
-    "hhh.md",
-    "README.md"
+    "hhh.md"
   ]
 }
