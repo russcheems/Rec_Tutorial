@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "e6076f648aee6d0e",
@@ -171,6 +172,9 @@
   },
   "active": "05b44b5f3696e168",
   "lastOpenFiles": [
+    "pics/Pasted image 20250924213629.png",
+    "pics/Pasted image 20250924212647.png",
+    "召回/swing.py",
     "ml-100k/ratings.csv",
     "召回/ml_to_csv.py",
     "召回/item_cf.py",
@@ -185,8 +189,6 @@
     "ml-100k/ub.test",
     "ml-100k/ub.base",
     "ml-100k/ua.test",
-    "ml-100k/ua.base",
-    "ml-100k/u5.test",
     "test.md",
     "hhh.md"
   ]

@@ -1,7 +1,7 @@
 # Rec_Tutorial
 
 > 暂时只用 `u.data` 文件。
-
+8
 - **u.data**：主评分数据，结构为：
   
   | user_id | item_id | rating | timestamp |

@@ -7,9 +7,10 @@ class ItemCF:
     def __init__(self, 
                  dataset_path="ml-100k/ratings.csv", 
                  top_k=10,
-                 lastn=30):
+                 lastn=20):
         """
-        取最相似的10个物品，保留用户最近交互的30个物品
+        取最相似的10个物品，保留用户最近交互的20个物品
+        Each user has rated at least 20 movies
         """
         self.dataset_path = dataset_path
         self.top_k = top_k
@@ -31,7 +32,7 @@ class ItemCF:
             return False
     
     def compute_item_similarity(self):
-        # 维护用户-物品 和 物品-用户 的映射
+
         self.user_items = defaultdict(dict)  # 用户对物品的评分
         item_users = defaultdict(dict)       # 后面算交集用
 
@@ -39,13 +40,14 @@ class ItemCF:
             user_id = row['userId']
             item_id = row['movieId']
             rating = row['rating']
+
             self.user_items[user_id][item_id] = rating
             item_users[item_id][user_id] = rating
 
-        self.item_sim = defaultdict(dict)
+        self.item_sim = defaultdict(dict) 
         self.item_sim_sorted = defaultdict(list)  # 存储每个物品的top_k个最相似物品
 
-        total_items = len(item_users)
+        total_items = len(item_users) # 物品总数
         
         for i, (item_i, users_i) in enumerate(item_users.items()):
             
@@ -64,6 +66,15 @@ class ItemCF:
                 # 相似度计算：同时喜欢两个物品的人数 / sqrt(喜欢物品i的人数 * 喜欢物品j的人数) 
                 # 这里没有考虑到喜欢程度
                 similarity = len(common_users) / math.sqrt(len(users_i) * len(users_j))
+                # 如果考虑喜欢程度，其实就是余弦相似度
+                # 分子 = 用户A对物品i的评分 * 用户A对物品j的评分 + 用户B对物品i的评分 * 用户B对物品j的评分 + ...
+                # 分母 = sqrt(用户A对物品i的评分^2 + 用户B对物品i的评分^2 + ...) * sqrt(用户A对物品j的评分^2 + 用户B对物品j的评分^2 + ...)
+
+                # likes = [users_i[u] * users_j[u] for u in common_users] # 这是分子
+                # denom = math.sqrt(sum([users_i[u]**2 for u in common_users])) * math.sqrt(sum([users_j[u]**2 for u in common_users])) # 分母
+                # similarity = sum(likes) / denom
+
+
                 self.item_sim[item_i][item_j] = similarity
                 similarities.append((similarity, item_j))
             
@@ -73,7 +84,7 @@ class ItemCF:
     
     def recommend_for_user(self, user_id, n_rec=10):
 
-        interacted_items = self.user_items[user_id]
+        interacted_items = self.user_items[user_id] # 召回lastn
         item_scores = defaultdict(float)
 
         for item_i, rating_i in interacted_items.items():
@@ -81,7 +92,6 @@ class ItemCF:
             for item_j, sim_ij in self.item_sim[item_i].items():
                 if item_j in interacted_items:  # 跳过用户已交互的物品
                     continue
-
                 item_scores[item_j] += rating_i * sim_ij
         return sorted(item_scores.items(), key=lambda x: x[1], reverse=True)[:n_rec]
     
