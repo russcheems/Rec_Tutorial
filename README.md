@@ -1,14 +1,26 @@
 # Rec_Tutorial
 
-数据集：暂时只用了u.data，结构为 uid iid rating timestamp
-u.genre 类型
-u.info  u.data中的用户数，电影数和评分数。
-u.item  结构为movie id | movie title | release date | video release date | IMDb URL 
+> 暂时只用 `u.data` 文件。
 
-                   unknown | Action | Adventure | Animation | Children's | Comedy | Crime | Documentary | Drama | Fantasy | Film-Noir | Horror | Musical | Mystery | Romance | Sci-Fi | Thriller | War | Western
-                   后面这些是类型的独热编码
-u.occupation 职业
-u.user 个人信息 结构为uid age gender occupation zip code
+- **u.data**：主评分数据，结构为：
+  
+  | user_id | item_id | rating | timestamp |
+  | ------- | ------- | ------ | --------- |
+  
+- **u.genre**：电影类型列表
+- **u.info**：包含用户数、电影数和评分数等统计信息
+- **u.item**：电影信息，结构为：
+  
+  | movie_id | movie_title | release_date | video_release_date | IMDb_URL | unknown | Action | Adventure | Animation | Children's | Comedy | Crime | Documentary | Drama | Fantasy | Film-Noir | Horror | Musical | Mystery | Romance | Sci-Fi | Thriller | War | Western |
+  | -------- | ----------- | ------------ | ------------------ | -------- | ------- | ------ | --------- | --------- | ---------- | ------ | ----- | ----------- | ----- | ------- | --------- | ------ | ------- | ------- | ------- | ------ | -------- | --- | ------- |
+  
+  后面各列为类型的独热编码
 
+- **u.occupation**：职业列表
+- **u.user**：用户信息，结构为：
+  
+  | user_id | age | gender | occupation | zip_code |
+  | ------- | --- | ------ | ---------- | -------- |
 
-后面u1到u5相当于5折交叉验证
+- **u1.base/u1.test ... u5.base/u5.test**：5折交叉验证划分的数据子集
+
