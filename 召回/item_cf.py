@@ -5,7 +5,7 @@ import math
 
 class ItemCF:
     def __init__(self, 
-                 dataset_path="../dataset/ml-latest-small/ratings.csv", 
+                 dataset_path="ml-100k/ratings.csv", 
                  top_k=10,
                  lastn=30):
         """
@@ -32,9 +32,8 @@ class ItemCF:
     
     def compute_item_similarity(self):
         # 维护用户-物品 和 物品-用户 的映射
-        # 是否需要维护物品-用户映射？
         self.user_items = defaultdict(dict)  # 用户对物品的评分
-        item_users = defaultdict(dict)       
+        item_users = defaultdict(dict)       # 后面算交集用
 
         for _, row in self.ratings.iterrows():
             user_id = row['userId']
@@ -62,7 +61,8 @@ class ItemCF:
                 if len(common_users) == 0:
                     continue
                     
-                # 相似度计算：同时喜欢两个物品的人数 / sqrt(喜欢物品i的人数 * 喜欢物品j的人数)
+                # 相似度计算：同时喜欢两个物品的人数 / sqrt(喜欢物品i的人数 * 喜欢物品j的人数) 
+                # 这里没有考虑到喜欢程度
                 similarity = len(common_users) / math.sqrt(len(users_i) * len(users_j))
                 self.item_sim[item_i][item_j] = similarity
                 similarities.append((similarity, item_j))
@@ -81,17 +81,15 @@ class ItemCF:
             for item_j, sim_ij in self.item_sim[item_i].items():
                 if item_j in interacted_items:  # 跳过用户已交互的物品
                     continue
-                # Item CF 公式: 用户对历史交互物品的兴趣 * 待计算物品和该物品的相似度
+
                 item_scores[item_j] += rating_i * sim_ij
-        
-        # 返回评分最高的n_rec个物品
         return sorted(item_scores.items(), key=lambda x: x[1], reverse=True)[:n_rec]
     
     def build_user_item_index(self):
         self.user_item_index = {}
         
         for user_id, items in self.user_items.items():
-            # 按评分降序排列物品，并最多保留lastn个
+            # 按评分降序排列 保留lastn个
             sorted_items = sorted(items.items(), key=lambda x: x[1], reverse=True)[:self.lastn]
             self.user_item_index[user_id] = [item for item, _ in sorted_items]
     
