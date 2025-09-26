@@ -172,6 +172,12 @@
   },
   "active": "05b44b5f3696e168",
   "lastOpenFiles": [
+    "matrix_completion_model.pt",
+    "matrix_completion_training_curve.png",
+    "matrix_factorization_training.png",
+    "召回/matrix_completion.py",
+    "召回/matrix_comple",
+    "召回/matrix",
     "pics/Pasted image 20250924213629.png",
     "pics/Pasted image 20250924212647.png",
     "召回/swing.py",
@@ -186,9 +192,6 @@
     "README.md",
     "概要",
     "召回/user_cf.py",
-    "ml-100k/ub.test",
-    "ml-100k/ub.base",
-    "ml-100k/ua.test",
     "test.md",
     "hhh.md"
   ]
