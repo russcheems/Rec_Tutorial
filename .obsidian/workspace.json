@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "e6076f648aee6d0e",
@@ -170,8 +169,11 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "05b44b5f3696e168",
+  "active": "b8a4506c5321fc48",
   "lastOpenFiles": [
+    "dssm_model.pt",
+    "dssm_training_curve.png",
+    "召回/dssm.py",
     "matrix_completion_model.pt",
     "matrix_completion_training_curve.png",
     "matrix_factorization_training.png",
@@ -190,8 +192,6 @@
     "pics",
     "pics/Pasted image 20250922155734.png",
     "README.md",
-    "概要",
-    "召回/user_cf.py",
     "test.md",
     "hhh.md"
   ]
