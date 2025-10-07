@@ -102,7 +102,7 @@ class MovieLensDataset(Dataset):
         item_id = inv_item_map[item_idx] if item_idx is not None else None
         return user_id, item_id
         
-    
+        
 class DSSM(nn.Module):
     def __init__(self, num_users, num_items, embedding_dim=128, hidden_layers=[512, 256]):
 

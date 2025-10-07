@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "召回/召回.md",
+                "file": "特征交叉/特征交叉.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "召回"
+              "title": "特征交叉"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "e6076f648aee6d0e",
@@ -169,8 +169,16 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "b8a4506c5321fc48",
+  "active": "05b44b5f3696e168",
   "lastOpenFiles": [
+    "pics/Pasted image 20251007163812.png",
+    "召回/召回.md",
+    "特征交叉/特征交叉.md",
+    "召回/dr.py",
+    "特征交叉/fm.md",
+    "pics/Pasted image 20251006204607.png",
+    "排序/mmoe.py",
+    "排序",
     "dssm_model.pt",
     "dssm_training_curve.png",
     "召回/dssm.py",
@@ -183,13 +191,8 @@
     "pics/Pasted image 20250924213629.png",
     "pics/Pasted image 20250924212647.png",
     "召回/swing.py",
-    "ml-100k/ratings.csv",
-    "召回/ml_to_csv.py",
-    "召回/item_cf.py",
     "概要/基本概念.md",
-    "召回/召回.md",
     "pics/Pasted image 20250922232400.png",
-    "pics",
     "pics/Pasted image 20250922155734.png",
     "README.md",
     "test.md",
