@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "特征交叉/特征交叉.md",
+                "file": "序列/DIN和SIM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "特征交叉"
+              "title": "DIN和SIM"
+            }
+          },
+          {
+            "id": "fb1c31c9d36a8989",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "多样性/多样性.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "多样性"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -169,31 +184,35 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "05b44b5f3696e168",
+  "active": "fb1c31c9d36a8989",
   "lastOpenFiles": [
-    "pics/Pasted image 20251007163812.png",
-    "召回/召回.md",
+    "特征交叉/lhuc_ppnet.py",
+    "特征交叉/fibinet.py",
+    "特征交叉/bilinear_interaction.py",
+    "特征交叉/senet.py",
+    "特征交叉/feature_crossing_models.py",
+    "序列/sim.py",
+    "序列/din.py",
+    "pics/Pasted image 20251019181234.png",
+    "序列/DIN和SIM.md",
+    "多样性/多样性.md",
+    "多样性",
     "特征交叉/特征交叉.md",
+    "序列",
+    "pics/Pasted image 20251015115121.png",
+    "pics/Pasted image 20251015112620.png",
+    "特征交叉/dcn.py",
+    "召回/召回.md",
+    "pics/Pasted image 20251007163812.png",
     "召回/dr.py",
     "特征交叉/fm.md",
     "pics/Pasted image 20251006204607.png",
-    "排序/mmoe.py",
-    "排序",
-    "dssm_model.pt",
     "dssm_training_curve.png",
-    "召回/dssm.py",
-    "matrix_completion_model.pt",
     "matrix_completion_training_curve.png",
     "matrix_factorization_training.png",
-    "召回/matrix_completion.py",
-    "召回/matrix_comple",
-    "召回/matrix",
     "pics/Pasted image 20250924213629.png",
     "pics/Pasted image 20250924212647.png",
-    "召回/swing.py",
     "概要/基本概念.md",
-    "pics/Pasted image 20250922232400.png",
-    "pics/Pasted image 20250922155734.png",
     "README.md",
     "test.md",
     "hhh.md"
